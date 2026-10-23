@@ -4,3 +4,68 @@ body { margin: 0; min-width: 320px; font-family: Arial, sans-serif; color: #1717
 a { color: inherit; }
 button, input, textarea, select { font: inherit; }
 body{padding:48px}.page{max-width:640px;margin:0 auto}.form{display:grid;gap:20px;padding:32px;background:#fff;border:1px solid #aaa}.field{display:grid;gap:8px}input,textarea,button{width:100%;padding:14px;border:2px solid #171717;border-radius:0;background:#fff}textarea{min-height:150px;resize:vertical}button{background:#d8ff55;cursor:pointer}button:disabled{opacity:.45;cursor:not-allowed}/* TODO hover, focus, focus-visible, user-invalid, valid, placeholder, checked */
+.field input,
+.field textarea {
+    width: 100%;
+    padding: 10px 14px;
+    border: 2px solid #ccc;
+    border-radius: 6px;
+    transition: border-color 0.2s, box-shadow 0.2s, background-color 0.2s;
+}
+.field input:hover,
+.field textarea:hover {
+    border-color: #888;
+}
+button:not(:disabled):hover {
+    background-color: #0056b3;
+    color: #fff;
+    cursor: pointer;
+}
+.field input:focus,
+.field textarea:focus {
+    outline: none;
+    border-color: #0056b3;
+}
+button:focus-visible,
+.field input:focus-visible,
+.field textarea:focus-visible {
+    outline: 3px solid #80bdff;
+    outline-offset: 2px;
+}
+.field input:user-invalid,
+.field textarea:user-invalid {
+    border-color: #dc3545;
+    background-color: #fff8f8;
+}
+.field input:valid,
+.field textarea:valid {
+    border-color: #198754;
+    background-color: #f8fff9;
+}
+button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    background-color: #e9ecef;
+    color: #6c757d;
+    border: 1px solid #dee2e6;
+}
+.check {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+input[type="checkbox"] {
+    accent-color: #0056b3;
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+}
+.check input:checked + span {
+    font-weight: bold;
+    color: #0056b3;
+}
+::placeholder {
+    color: #999; 
+    opacity: 1; 
+}
